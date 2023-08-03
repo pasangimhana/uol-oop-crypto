@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <string>
 #include <utility>
@@ -12,7 +13,7 @@ public:
 
     // instead of assigning the values in the function body, an initialization list can be used
     OrderBookEntry(double _price, double _amount, std::string _timestamp, std::string _product, OrderBookType _orderType)
-    : price(_price), amount(_amount), timestamp(std::move(_timestamp)), product(std::move(_product)), orderType(_orderType) {}
+            : price(_price), amount(_amount), timestamp(std::move(_timestamp)), product(std::move(_product)), orderType(_orderType) {}
 
     double price;
     double amount;
@@ -20,11 +21,11 @@ public:
     std::string product;
     OrderBookType orderType;
 };
+//
+// Created by phaser on 03/08/23.
+//
 
-int main() {
-    OrderBookEntry order1{10.40, 0.01, "123456789", "BTC-USD", OrderBookType::ask};
-    std::cout << "Price: " << order1.price << std::endl;
-}
-//
-// Created by phaser on 02/08/23.
-//
+#ifndef UOL_OOP_CRYPTO_ORDERBOOKENTRY_H
+#define UOL_OOP_CRYPTO_ORDERBOOKENTRY_H
+
+#endif //UOL_OOP_CRYPTO_ORDERBOOKENTRY_H
