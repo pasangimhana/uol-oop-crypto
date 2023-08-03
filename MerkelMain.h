@@ -1,10 +1,12 @@
 #include <iostream>
 
 class MerkelMain {
-    public:
+public:
     MerkelMain();
     /** Call this to run the full program*/
     void init();
+
+private:
     void printMenu();
     int getUserOption();
     void processUserOption(int userOption);

@@ -32,7 +32,7 @@ void MerkelMain::printMenu()
 }
 
 int MerkelMain::getUserOption(){
-    std::cout << "Enter an input between 1 - 6" << std::endl;
+    std::cout << "Enter an input between 1 - 6: " << std::endl;
     int userOption;
     std::cin >> userOption;
     return userOption;
