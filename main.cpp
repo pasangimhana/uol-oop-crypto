@@ -10,13 +10,9 @@ enum class OrderBookType {
 class OrderBookEntry {
 public:
 
-    OrderBookEntry(double _price, double _amount, std::string _timestamp, std::string _product, OrderBookType _orderType) {
-        this->price = _price;
-        this->amount = _amount;
-        this->timestamp = std::move(_timestamp);
-        this->product = std::move(_product);
-        this->orderType = _orderType;
-    }
+    // instead of assigning the values in the function body, an initialization list can be used
+    OrderBookEntry(double _price, double _amount, std::string _timestamp, std::string _product, OrderBookType _orderType)
+    : price(_price), amount(_amount), timestamp(std::move(_timestamp)), product(std::move(_product)), orderType(_orderType) {}
 
     double price;
     double amount;
@@ -26,7 +22,8 @@ public:
 };
 
 int main() {
-    OrderBookEntry order1{100, 0.01, "123456789", "BTC-USD", OrderBookType::ask};
+    OrderBookEntry order1{10.40, 0.01, "123456789", "BTC-USD", OrderBookType::ask};
+    std::cout << "Price: " << order1.price << std::endl;
 }
 //
 // Created by phaser on 02/08/23.
