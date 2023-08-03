@@ -1,0 +1,9 @@
+# ninja log v5
+0	382	1691060369475503054	CMakeFiles/uol_oop_crypto.dir/MerkelMain.cpp.o	d99449cd9a4b7dfe
+0	389	1691060369483502992	CMakeFiles/uol_oop_crypto.dir/Main.cpp.o	82e90855765f2daf
+389	490	1691060369583502211	uol_oop_crypto	86e7a9bd33e7616
+2	375	1691060847659171088	CMakeFiles/uol_oop_crypto.dir/MerkelMain.cpp.o	d99449cd9a4b7dfe
+1	387	1691060847671170968	CMakeFiles/uol_oop_crypto.dir/Main.cpp.o	82e90855765f2daf
+387	493	1691060847775169930	uol_oop_crypto	86e7a9bd33e7616
+0	395	1691060877750869570	CMakeFiles/uol_oop_crypto.dir/Main.cpp.o	82e90855765f2daf
+395	509	1691060877862868444	uol_oop_crypto	86e7a9bd33e7616
