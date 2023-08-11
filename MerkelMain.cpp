@@ -1,4 +1,8 @@
 #include "MerkelMain.h"
+#include "OrderBookEntry.h"
+
+
+/** Public Methods */
 
 MerkelMain::MerkelMain()
 {
@@ -7,6 +11,8 @@ MerkelMain::MerkelMain()
 
 void MerkelMain::init()
 {
+    loadOrderBook();
+
     int input;
     while(true)
     {
@@ -15,6 +21,10 @@ void MerkelMain::init()
         processUserOption(input);
     }
 }
+
+
+/** Private Methods */
+
 
 void MerkelMain::printMenu()
 {
@@ -92,5 +102,24 @@ void MerkelMain::processUserOption(int userOption)
         case 6:
             gotoNextTimeframe();
             break;
+    }
+}
+/** Load the orderbook data */
+void MerkelMain::loadOrderBook()
+{
+
+    // instead we can directly pass the consturctor
+    orders.emplace_back(45.25, 0.01, "123456789", "BTC-USD", OrderBookType::ask);
+    orders.emplace_back(45.26, 0.01, "123456789", "BTC-USD", OrderBookType::ask);
+
+
+    // iterating the orders Orderbook using a range based for loop -  this is bad because you have to copy the object
+    for (const OrderBookEntry order : orders){
+        std::cout << "Price: " << order.price << std::endl;
+    }
+
+    // const means we are only reading, we are not editing,
+    for (OrderBookEntry& order : orders){
+        std::cout << "Price: " << order.price << std::endl;
     }
 }

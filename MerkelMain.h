@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <vector>
+#include "OrderBookEntry.h"
 
 class MerkelMain {
 public:
@@ -7,7 +10,13 @@ public:
     void init();
 
 private:
-    void printMenu();
+    // Private member variables
+    /** Order book */
+    std::vector <OrderBookEntry> orders;
+
+    // Private methods
+    void loadOrderBook();
+    static void printMenu();
     int getUserOption();
     void processUserOption(int userOption);
     void printHelp();

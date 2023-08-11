@@ -9,4 +9,5 @@ add_executable(uol_oop_crypto
         Main.cpp
         MerkelMain.cpp
         MerkelMain.h
-        OrderBookEntry.h)
+        OrderBookEntry.h
+        test.cpp)
