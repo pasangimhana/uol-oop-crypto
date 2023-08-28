@@ -1,28 +1,27 @@
-#include <iostream>
-#include <string>
+#pragma once
+
 #include <vector>
 #include "OrderBookEntry.h"
 
-class MerkelMain {
-public:
-    MerkelMain();
-    /** Call this to run the full program*/
-    void init();
+class MerkelMain
+{
+    public:
+        MerkelMain();
+        /** Call this to start the sim */
+        void init();
+    private: 
+        void loadOrderBook();
+        void printMenu();
+        void printHelp();
+        void printMarketStats();
+        void enterOffer();
+        void enterBid();
+        void printWallet();
+        void gotoNextTimeframe();
+        int getUserOption();
+        void processUserOption(int userOption);
 
-private:
-    // Private member variables
-    /** Order book */
-    std::vector <OrderBookEntry> orders;
 
-    // Private methods
-    void loadOrderBook();
-    static void printMenu();
-    int getUserOption();
-    void processUserOption(int userOption);
-    void printHelp();
-    void printMarketStats();
-    void enterAsk();
-    void enterBid();
-    void printWallet();
-    void gotoNextTimeframe();
+        std::vector<OrderBookEntry> orders;
+
 };
