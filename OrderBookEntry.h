@@ -15,6 +15,8 @@ class OrderBookEntry
                         OrderBookType _orderType);
 
 
+        static OrderBookType stringToOrderBookType(std::string s);
+        
         double price;
         double amount;
         std::string timestamp;

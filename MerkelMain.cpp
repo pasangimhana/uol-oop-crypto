@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "OrderBookEntry.h"
+#include "CSVReader.h"
 
 MerkelMain::MerkelMain()
 {
@@ -23,18 +24,7 @@ void MerkelMain::init()
 
 void MerkelMain::loadOrderBook()
 {
-
-    orders.push_back(  OrderBookEntry{1000, 
-                          0.02, 
-                        "2020/03/17 17:01:24.884492", 
-                        "BTC/USDT", 
-                        OrderBookType::bid}    );
-
-    orders.push_back(  OrderBookEntry{2000, 
-                          0.02, 
-                        "2020/03/17 17:01:24.884492", 
-                        "BTC/USDT", 
-                        OrderBookType::bid}    );
+     orders = CSVReader::readCSV("20200317.csv");
      
 }
 
@@ -63,7 +53,21 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printMarketStats()
 {
-    std::cout << "OrderBook contains :  " << orders.size() << "entries" << std::endl;
+    std::cout << "\n OrderBook contains :  " << orders.size() << " entries" << std::endl;
+    unsigned int bidCount = 0;
+    unsigned int askCount = 0;
+    for (OrderBookEntry& order : orders)
+    {
+        if (order.orderType == OrderBookType::bid)
+        {
+            bidCount++;
+        }
+        else
+        {
+            askCount++;
+        }
+    }
+    std::cout << "Bids: " << bidCount << " asks: " << askCount << std::endl;
 }
 
 void MerkelMain::enterOffer()
