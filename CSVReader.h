@@ -15,3 +15,4 @@ class CSVReader
     static std::vector<std::string> tokenize(std::string csvLine, char separator);
     static OrderBookEntry stringstoOBE(std::vector<std::string> strings);
 };
+ 
