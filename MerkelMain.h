@@ -20,8 +20,5 @@ class MerkelMain
         void gotoNextTimeframe();
         int getUserOption();
         void processUserOption(int userOption);
-
-
-        std::vector<OrderBookEntry> orders;
-
+        std::vector<OrderBookEntry> orders;one
 };
