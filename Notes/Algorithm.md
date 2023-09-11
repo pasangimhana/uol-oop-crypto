@@ -15,9 +15,21 @@
 
 "To Increase liquidity"
 
-## How sorting happens when a new order is posted
+## How matching happens
+
+1. Buy orders and Sell orders are matched by their price. The highest price of the Buy orders is matched with the lowest price of the Sell orders.
+
+2. If the amount of coins of the Buy order is greater than the amount of coins of the Sell order, the Buy order is partially filled. The Sell order is completely filled. The Buy order's amount is reduced. Sell Order is removed and put into the FilledBook
+
+3. If the amount of coins of the Buy order is smaller than the amount of coins of the Sell order, the Buy order is completely filled. The Sell order is partially filled. The Sell order's amount is reduced. Buy Order is removed and put into the FilledBook
+
+4. If the amount of coins of the Buy order is equal to the amount of coins of the Sell order, the Buy order is completely filled. The Sell order is completely filled. Both orders are removed and put into the FilledBook.
 
 
+## Additional Notes
 
+1. There are a ton other variables. Here we are using price as the main variable to match orders. But, we can use other variables like time stamp, amount of coins, etc. to match orders.
+
+2. Real world scenario is much more complex. We have to consider the fees, taxes, etc. But, we are not considering those things here.
 
 
