@@ -7,8 +7,6 @@
 
 MerkelMain::MerkelMain()
 {
-
-
 }
 
 void MerkelMain::init()
@@ -57,6 +55,7 @@ void MerkelMain::printMarketStats()
 void MerkelMain::enterOffer()
 {
     std::cout << "Mark and offer - enter the amount " << std::endl;
+
 }
 
 void MerkelMain::enterBid()

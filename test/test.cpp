@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
+#include <ctime>
 
-int main() {
+std::string getCurrentDateTime() {
     // Get current time point
     auto now = std::chrono::system_clock::now();
 
@@ -13,14 +14,22 @@ int main() {
     std::tm* time_info = std::localtime(&now_time);
 
     // Format the time
-    std::cout << std::put_time(time_info, "%Y/%m/%d %H:%M:%S");
+    std::ostringstream oss;
+    oss << std::put_time(time_info, "%Y/%m/%d %H:%M:%S");
 
     // Get milliseconds and microseconds
     auto ms = std::chrono::time_point_cast<std::chrono::milliseconds>(now);
     auto us = std::chrono::time_point_cast<std::chrono::microseconds>(now) - ms;
 
-    // Print milliseconds and microseconds
-    std::cout << '.' << std::setfill('0') << std::setw(6) << us.count() << std::endl;
+    // Append milliseconds and microseconds to the string
+    oss << '.' << std::setfill('0') << std::setw(6) << us.count();
+
+    return oss.str();
+}
+
+int main() {
+    std::string formattedDateTime = getCurrentDateTime();
+    std::cout << formattedDateTime << std::endl;
 
     return 0;
 }

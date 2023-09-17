@@ -7,15 +7,23 @@
 
 class OrderBook
 {
-    public:
-    /** Constructor */
+public:
+        /** Constructor */
         OrderBook(std::string filename);
-/** Returns all orders for a given product */
         std::vector<std::string> getKnownProducts();
-/** Returns all orders for a given product */
-        std::vector<OrderBookEntry> getOrders(OrderBookType type, std::string product, double price);
 
-
-    private:
+private:
         std::vector<OrderBookEntry> orders;
+        std::vector<OrderBookEntry> getOrders(OrderBookType type, std::string product);
+        std::vector<OrderBookEntry> matchAsksToBids(std::string product);
+
+        // helpers
+        void cleanOrderBook(std::vector<OrderBookEntry> orders);
+        std::string getCurrentDateTime();
+
+        // static helpers
+        static bool sortAsksAsc(OrderBookEntry &a, OrderBookEntry &b);
+        static bool sortBidsDesc(OrderBookEntry &a, OrderBookEntry &b);
+
+
 };

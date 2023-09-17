@@ -2,7 +2,7 @@
 
 #include <string>
 
-enum class OrderBookType{bid, ask};
+enum class OrderBookType{bid, ask, sale};
 
 class OrderBookEntry
 {
@@ -22,4 +22,6 @@ class OrderBookEntry
         std::string timestamp;
         std::string product;
         OrderBookType orderType;
+
+        
 };
